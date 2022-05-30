@@ -1,16 +1,18 @@
 import './App.css';
+import Character from './components/character/Character';
+import Data from './Data.js';
 
 function App() {
+  console.log(Data.results);
   return (
     <div className="App">
-      <h1>Ejercicio para trabajar con React</h1>
-      <form>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <h1>Welcome to Datalovers with React</h1>
+      <section className='container-character'>
+      {Data.results.map(character=>
+        <Character characters = {character} />
+        )}
+      </section>
+
     </div>
   );
 }
